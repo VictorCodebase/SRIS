@@ -10,7 +10,8 @@ This project aims to predict student dropout risks using machine learning and pr
 - **Model Hosting** (Deployed on Hugging Face for inference)
 
 ## Dataset
-Dataset: [Predict Students' Dropout and Academic Success (UCI)](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success)
+Dataset: [Predict Students' Dropout and Academic Success (UCI)](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success)  
+This dataset is supported by program SATDAP - [Capacitação da Administração Pública](https://www.enap.gov.br/pt/) under grant POCI-05-5762-FSE-000191, Portugal.
 
 ### Data Processing
 1. **Exploratory Data Analysis (EDA)**
