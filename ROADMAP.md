@@ -1,82 +1,148 @@
-# LexiBloom Project Roadmap  
+# Student Dropout Prediction System - 4-Month Implementation Roadmap
 
-> **Empowering neurodiverse learners with AI-driven dyslexia detection and support.**  
+## Overview
+**Goal:** Develop an AI-powered system to predict student dropout risks based on academic, socio-economic, and personal factors.
 
----
-
-## 📌 Overview  
-LexiBloom is an AI-powered tool designed to identify dyslexia early and provide actionable insights for parents and teachers. This roadmap outlines our phased approach to development, testing, and deployment.  
+**Dataset:** [Predict Students' Dropout and Academic Success (UCI)](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success)
 
 ---
 
-## 📅 Project Timeline  
-
-| Phase | Duration | Key Milestones |
-|-------|----------|----------------|
-| **Phase 1: Research & Planning** | Month 1-2 | Market research, user needs analysis, partnerships |
-| **Phase 2: Data Collection & Model Training** | Month 3-5 | Dataset acquisition, model training, feedback loops |
-| **Phase 3: Prototype Development** | Month 6-7 | Mobile & web app development, AI integration |
-| **Phase 4: Testing & Refinement** | Month 8-9 | Pilot testing, AI & UI improvements, security considerations |
-| **Phase 5: Deployment & Awareness Campaign** | Month 10-12 | Public launch, awareness campaigns, institutional adoption |
-| **Phase 6: Continuous Improvement & Expansion** | Ongoing | Model updates, feature expansion, geographic scaling |
-
----
-
-## 🏗️ Phase 1: Research & Planning  
-- [x] Conduct market research on dyslexia awareness in Kenya  
-- [x] Engage with educators, parents, and specialists  
-- [x] Define AI functionalities and scope  
-
----
-
-## 📊 Phase 2: Data Collection & Model Training  
-- [ ] Collect linguistic and cognitive datasets  
-- [ ] Preprocess and label data for training  
-- [ ] Train machine learning models for dyslexia detection  
-- [ ] Develop feedback loops to refine AI accuracy  
-
----
-
-## 📱 Phase 3: Prototype Development  
-- [ ] Build the **LexiBloom** mobile (React Native) and web application  
-- [ ] Integrate AI-based screening and recommendations  
-- [ ] Design an intuitive UI for parents and teachers  
-- [ ] Implement educational resources for dyslexia support  
+## Project Timeline
 
 ```mermaid
-flowchart TD;
-    A[User Input] -->|Text & Reading Patterns| B(AI Model);
-    B -->|Diagnosis| C{Result: Dyslexic or Not};
-    C -->|Positive| D[Personalized Learning Plan];
-    C -->|Negative| E[General Learning Tips];
+gantt
+title Project Timeline
+dateFormat  YYYY-MM
+todayMarker off
+section Data Exploration & Preprocessing
+Dataset Analysis  :done, a1, 2025-03, 2025-03
+Data Cleaning  :done, a2, 2025-03, 2025-04
+EDA & Feature Engineering :done, a3, 2025-04, 2025-04
+section Model Development & Training
+Baseline Models  :done, b1, 2025-04, 2025-05
+Advanced Models & Tuning  :done, b2, 2025-05, 2025-05
+section Deployment & Integration Planning
+API Development  :done, c1, 2025-06, 2025-06
+Dashboard Design  :done, c2, 2025-06, 2025-06
+Integration Planning  :done, c3, 2025-06, 2025-06
+section Deployment & Monitoring
+Cloud Deployment  :done, d1, 2025-07, 2025-07
+Monitoring & Optimization  :done, d2, 2025-07, 2025-07
 ```
 
-## 🔬 Phase 4: Testing & Refinement
-- [ ] Conduct pilot testing with selected schools and parents
-- [ ] Gather feedback on AI accuracy and user experience
-- [ ] Improve model performance and UI/UX
-- [ ] Address security, privacy, and ethical concerns
+---
 
+## Month 1: Data Exploration & Preprocessing
+> Quality data is the foundation of a good model.
 
-## 🚀 Phase 5: Deployment & Awareness Campaign
-- [ ] Launch LexiBloom to the public
-- [ ] Conduct targeted dyslexia awareness campaigns
-- [ ] Partner with educational institutions for large-scale use
-- [ ] Set up user support and training resources
+### Tasks:
+- Understand dataset (features, missing values, distributions)
+- Data cleaning: handle missing values, normalize features, encode categorical variables
+- Exploratory Data Analysis (EDA): identify correlations, feature importance, and class imbalance
+- Define problem scope: classification approach, risk indicators, evaluation metrics
+
+### Expected Outcomes:
+- Cleaned dataset ready for model training
+- Insights into key dropout indicators
+
+```mermaid
+pie
+title Data Composition Analysis
+"Missing Values" : 20
+"Categorical Variables" : 30
+"Numerical Features" : 50
+```
+
+---
+
+## Month 2: Model Development & Training
+> Start simple, then optimize.
+
+### Tasks:
+- Split dataset (Train/Test, handle class imbalance if needed)
+- Train baseline models: Logistic Regression, Decision Trees, Random Forest
+- Experiment with advanced models: XGBoost, Neural Networks
+- Hyperparameter tuning & model comparison
+
+### Expected Outcomes:
+- Well-performing predictive model with optimized accuracy
+- Comparative analysis of model performances
 
 ```mermaid
 graph TD;
-    Launch -->|Marketing| Awareness;
-    Awareness -->|Educational Workshops| Schools;
-    Schools -->|Adoption| Increased_Usage;
+  A[Raw Data] -->|Cleaning & EDA| B(Preprocessed Data);
+  B -->|Feature Engineering| C(Training Data);
+  C -->|Train Model| D[Baseline Models];
+  C -->|Train Model| E[Advanced Models];
+  D -->|Evaluate| F[Performance Metrics];
+  E -->|Evaluate| F;
 ```
 
-## 🔄 Phase 6: Continuous Improvement & Expansion
-- [ ] Regular AI model updates based on new data
-- [ ] Expand language and cultural adaptation
-- [ ] Introduce additional features (speech, handwriting analysis)
-- [ ] Scale to other regions facing similar dyslexia challenges
+---
 
-## 📝 Final Thoughts
-> **"Dyslexia is not a limitation—it's a different way of thinking. LexiBloom is here to ensure that every child receives the support they deserve."**
+## Month 3: Deployment & Integration Planning
+> A model is only useful if it can be accessed and interpreted.
 
+### Tasks:
+- Develop API for model inference (Flask/FastAPI)
+- Design a simple dashboard for institutions (React/Django)
+- Plan integration with campus systems (Databases, student records)
+- Test API endpoints and model robustness
+
+### Expected Outcomes:
+- Functional API for prediction requests
+- Prototype dashboard for dropout insights
+- Defined strategy for campus system integration
+
+```mermaid
+sequenceDiagram
+  participant User
+  participant Dashboard
+  participant API
+  participant Model
+  User->>Dashboard: Request Prediction
+  Dashboard->>API: Send Student Data
+  API->>Model: Process & Predict
+  Model-->>API: Return Prediction
+  API-->>Dashboard: Send Result
+  Dashboard-->>User: Display Prediction
+```
+
+---
+
+## Month 4: Deployment, Monitoring & Optimization
+> Models degrade over time—monitoring is key.
+
+### Tasks:
+- Deploy model on a cloud platform (Hugging Face, AWS, Google Cloud)
+- Implement logging & monitoring (drift detection, retraining strategies)
+- Conduct real-world testing with sample student data
+- Optimize performance & finalize documentation
+
+### Expected Outcomes:
+- Deployed, accessible predictive model
+- Monitoring system for model performance
+- Comprehensive documentation for future scalability
+
+```mermaid
+stateDiagram
+  [*] --> Monitoring
+  Monitoring --> DriftDetection
+  DriftDetection --> Retraining
+  Retraining --> [*]
+```
+
+---
+
+## Final Deliverables
+- Fully trained & deployed model
+- API for campus system integration
+- Interactive dashboard for student dropout insights
+- Monitoring system for ongoing evaluation
+
+### Next Steps:
+- Expand the model using additional datasets
+- Refine feature selection
+- Scale integration across institutions
+
+> Data-driven decisions can transform student success rates. Let’s build for impact!
