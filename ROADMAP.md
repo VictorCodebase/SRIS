@@ -45,14 +45,6 @@ Monitoring & Optimization  :done, d2, 2025-07, 2025-07
 - Cleaned dataset ready for model training
 - Insights into key dropout indicators
 
-```mermaid
-pie
-title Data Composition Analysis
-"Missing Values" : 20
-"Categorical Variables" : 30
-"Numerical Features" : 50
-```
-
 ---
 
 ## Month 2: Model Development & Training
