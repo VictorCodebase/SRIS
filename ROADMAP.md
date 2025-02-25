@@ -26,7 +26,6 @@ LexiBloom is an AI-powered tool designed to identify dyslexia early and provide 
 - [x] Conduct market research on dyslexia awareness in Kenya  
 - [x] Engage with educators, parents, and specialists  
 - [x] Define AI functionalities and scope  
-- [x] Establish partnerships with schools and organizations  
 
 ---
 
