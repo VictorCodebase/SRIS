@@ -6,70 +6,72 @@ This project aims to predict student dropout risks using machine learning and pr
 - **Data Analysis & Preprocessing** (Exploratory Data Analysis, cleaning, feature engineering)
 - **Machine Learning Model Training** (Multiple models trained and evaluated)
 - **Backend API** (Node.js-based API for communication)
-- **Mobile Prototype** (React Native frontend for institutional use)
+- **Web Dashboard** (React frontend for institutional use)
 - **Model Hosting** (Deployed on Hugging Face for inference)
 
 ## Dataset
 Dataset: [Predict Students' Dropout and Academic Success (UCI)](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success)  
 This dataset is supported by program SATDAP - [Capacitação da Administração Pública](https://www.enap.gov.br/pt/) under grant POCI-05-5762-FSE-000191, Portugal.
 
+
 ### Data Processing
-1. **Exploratory Data Analysis (EDA)**
-   - Identify missing values
-   - Understand feature distributions
-   - Detect correlations
+```python
+import pandas as pd
 
-2. **Preprocessing**
-   - Handle missing data (Imputation/Removal)
-   - Normalize and standardize numerical features
-   - Encode categorical features
-
-3. **Feature Engineering**
-   - Create new informative features
-   - Handle class imbalance with resampling techniques
+data = pd.read_csv("student_data.csv")
+print(data.info())  # Display dataset structure
+```
+1. **EDA**: Identify missing values, feature distributions, correlations
+2. **Preprocessing**: Handle missing data, normalize numerical values, encode categorical features
+3. **Feature Engineering**: Generate new features, address class imbalances
 
 ## Machine Learning Model Training
 ### Model Selection
-1. **Baseline Models**
-   - Logistic Regression
-   - Decision Trees
-2. **Advanced Models**
-   - Random Forest
-   - XGBoost
-   - Neural Networks
+```python
+from sklearn.ensemble import RandomForestClassifier
 
-### Training Process
-- Split dataset (train/test/validation)
-- Hyperparameter tuning
-- Model evaluation using metrics (accuracy, F1-score, AUC-ROC)
-- Compare performances and select the best model
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+```
+1. **Baseline Models**: Logistic Regression, Decision Trees
+2. **Advanced Models**: Random Forest, XGBoost, Neural Networks
 
 ### Model Hosting
-- Trained model is deployed on [Hugging Face](https://huggingface.co/) for inference
-- API endpoint for real-time student dropout risk prediction
+- Trained model is deployed on [Hugging Face](https://huggingface.co/)
+- API endpoint for real-time inference
 
 ## Backend API (Node.js)
 ### Features
-- Handles API requests from mobile app
+- Handles requests from web dashboard
 - Fetches prediction results from Hugging Face model
 - Manages institution and student data securely
 
-### Technologies Used
-- Express.js
-- MongoDB (for student records and institution data)
-- Authentication (JWT-based security)
+### Sample API Endpoint
+```javascript
+app.post("/predict", async (req, res) => {
+  const { studentData } = req.body;
+  const response = await axios.post("https://huggingface.co/model-endpoint", studentData);
+  res.json(response.data);
+});
+```
 
-## Mobile Application (React Native)
+## Web Dashboard (React)
 ### Features
 - Login system for institutions
-- Dashboard displaying student dropout risks
-- Ability to filter and monitor students
+- Visualized dropout risk trends
 - Notifications for high-risk students
 
-### Tech Stack
-- React Native (UI & State Management)
-- Axios (API calls)
-- Redux (State management)
+### Sample Component
+```jsx
+function StudentCard({ student }) {
+  return (
+    <div className="student-card">
+      <h3>{student.name}</h3>
+      <p>Dropout Risk: {student.risk}%</p>
+    </div>
+  );
+}
+```
 
 ## Deployment
 ### Cloud Services
@@ -77,14 +79,15 @@ This dataset is supported by program SATDAP - [Capacitação da Administração 
 - **Backend Hosting:** Render/Vercel
 - **Database:** MongoDB Atlas
 
-### Steps to Deploy
+### Deployment Steps
 1. Train model and upload to Hugging Face
-2. Deploy Node.js API on cloud platform
-3. Publish React Native app to Play Store
+2. Deploy Node.js API
+3. Deploy React web dashboard
 
 ## Future Improvements
-- Integration with additional datasets for higher accuracy
-- Expansion of model features for better risk predictions
-- Improved real-time monitoring and analytics for institutions
+- Integration with more datasets
+- Refinement of risk analysis model
+- Advanced real-time monitoring tools
 
-> **Data-driven insights can improve student retention rates—let’s build a smarter education system!**
+> **"Empowering institutions to improve student retention through AI-driven insights."**
+
