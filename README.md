@@ -1,4 +1,4 @@
-# Student Dropout Prediction System
+# Student Retention Intelligence System
 
 ## Overview
 This project aims to predict student dropout risks using machine learning and provide an institution-friendly dashboard and mobile application for real-time monitoring. The system consists of:
