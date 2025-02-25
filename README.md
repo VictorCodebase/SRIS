@@ -1,4 +1,4 @@
-# Student Retention Intelligence System
+# Student Retention Intelligence System `[SRIS]`
 
 ## Overview
 This project aims to predict student dropout risks using machine learning and provide an institution-friendly dashboard and mobile application for real-time monitoring. The system consists of:
