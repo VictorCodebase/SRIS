@@ -1,5 +1,10 @@
 # Student Dropout Prediction System - 4-Month Implementation Roadmap
 
+
+<p align="center">
+  <img width="744" alt="img03" src="https://github.com/user-attachments/assets/3e4a34a4-9bb8-47cc-8d35-eb3929b08dd3" />
+</p>
+
 ## Overview
 **Goal:** Develop an AI-powered system to predict student dropout risks based on academic, socio-economic, and personal factors.
 
