@@ -16,6 +16,7 @@ This project aims to predict student dropout risks using machine learning and pr
 ## Dataset
 Dataset: [Predict Students' Dropout and Academic Success (UCI)](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success)  
 This dataset is supported by program SATDAP - [Capacitação da Administração Pública](https://www.enap.gov.br/pt/) under grant POCI-05-5762-FSE-000191, Portugal.
+Realinho, V., Vieira Martins, M., Machado, J., & Baptista, L. (2021). Predict Students' Dropout and Academic Success [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5MC89.
 
 
 ### Data Processing
